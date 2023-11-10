@@ -17,7 +17,7 @@ const Main = () => {
       const result = processCommand(input);
       setOutput([...output, { command: input, result }]);
       setInput('');
-      onSignUp();
+      //onSignUp();
     }
   };
 
@@ -46,10 +46,10 @@ const Main = () => {
       <div className="output" ref={outputRef}>
         {output.map((item, index) => (
           <div key={index}>
-            <p style={{textAlign:'left'}}>
-            <strong>질문:</strong> {item.command}
-            <br />
-            <strong>답변:</strong> {item.result}
+            <p style={{ textAlign: 'left' }}>
+              <strong>질문:</strong> {item.command}
+              <br />
+              <strong>답변:</strong> {item.result}
             </p>
           </div>
         ))}

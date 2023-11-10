@@ -3,9 +3,21 @@ import './Sidebar.css';
 
 const Sidebar = () => {
   return (
-    <div className="header-container">
-      <img src="logo.png" alt="logo" style={{ width: '100px', height: '100px' }} />
-      <h3 style={{ marginLeft: '10px' }}>ㅇㅇㅇ님</h3>
+    <div className="sidebar-container">
+      <div className="chat-history">
+        <h2 style={{ fontSize: '1rem', position: 'sticky', top: '0' }}>Chat History</h2>
+        <ul>
+          <li><button>Chat 1</button></li>
+          <li><button>Chat 2</button></li>
+          {/* 추가적인 채팅 기록 버튼들 */}
+        </ul>
+      </div>
+      <div className="buttons">
+        <button>Help</button>
+      </div>
+      <div className="buttons">
+        <button>Setting</button>
+      </div>
     </div>
   );
 };
