@@ -17,12 +17,12 @@ const Main = () => {
       const result = processCommand(input);
       setOutput([...output, { command: input, result }]);
       setInput('');
-      //onSignUp();
+      onSignUp();
     }
   };
 
   const processCommand = (command) => {
-    return `${command}`;
+    return "잠시만 기다려 주세요. 10초 정도 소요됩니다.";
   };
 
   const onSignUp = () => {
@@ -33,9 +33,21 @@ const Main = () => {
         'Content-Type': 'application/json',
       },
     })
-      .then(response => response.json())
-      .then(res => console.log(res));
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(res => 
+      {
+        console.log(res);
+        const answer = res.answer; // "answer"의 값을 추출
+        setOutput([...output, { command: input, result: answer }]);
+      })
+    .catch(error => console.error('Error:', error));
   };
+  
 
   useEffect(() => {
     outputRef.current.scrollTop = outputRef.current.scrollHeight;
