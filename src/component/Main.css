@@ -1,5 +1,4 @@
-/* Existing styles */
-
+/* Common styles for both desktop and mobile */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -11,11 +10,8 @@
   padding: 20px;
 }
 
-
-
 .output {
   position: fixed;
-  top: 5%;
   width: 70%;
   height: 75vh;
   overflow-y: auto;
@@ -27,17 +23,41 @@
 
 .input-box {
   position: fixed;
-  bottom: 5%;
   width: 70%;
   height: 4%;
   padding: 10px;
   border: 2px solid #ddd;
   border-radius: 10px;
   margin-top: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.output-label {
-  width: 100px;
-  display: inline-block;
+/* Media Query for Desktop screens */
+@media only screen and (min-width: 768px) {
+  .main-container {
+    margin-left: 7%; /* Adjust the desktop margin if needed */
+  }
+
+  .output {
+    top: 5%;
+  }
+
+  .input-box {
+    bottom: 5%;
+  }
+}
+
+/* Media Query for Mobile screens */
+@media only screen and (max-width: 767px) {
+  .main-container {
+    margin-left: 5%; /* Adjust the mobile margin if needed */
+  }
+
+  .output {
+    top: 10%;
+  }
+
+  .input-box {
+    bottom: 10%;
+  }
 }
