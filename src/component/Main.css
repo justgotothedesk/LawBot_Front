@@ -44,6 +44,12 @@
 
   .input-box {
     bottom: 5%;
+    width: 90%;
+  }
+
+  .output {
+    top:15%;
+    width: 90%;
   }
 }
 
