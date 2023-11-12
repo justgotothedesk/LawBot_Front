@@ -31,3 +31,33 @@
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Media Query for Desktop screens */
+@media only screen and (min-width: 768px) {
+  .main-container {
+    margin-left: 7%; /* Adjust the desktop margin if needed */
+  }
+
+  .output {
+    top: 5%;
+  }
+
+  .input-box {
+    bottom: 5%;
+  }
+}
+
+/* Media Query for Mobile screens */
+@media only screen and (max-width: 767px) {
+  .main-container {
+    margin-left: 5%; /* Adjust the mobile margin if needed */
+  }
+
+  .output {
+    top: 10%;
+  }
+
+  .input-box {
+    bottom: 10%;
+  }
+}
